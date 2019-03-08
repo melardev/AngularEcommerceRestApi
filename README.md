@@ -1,8 +1,8 @@
 # AngularShopApp
-This shopping cart application is built using Vue, it is supposed to work with any of these servers listed below. **Be warned** that
+This shopping cart application is built using Angular, it is supposed to work with any of these servers listed below. **Be warned** that
 while making this app I am using this [Spring Boot Server](https://github.com/melardev/SBootApiEcomMVCHibernate) so I strongly encourage you
 to use that as well, all the other servers worked from postman, but I don't know If they return in the response something called differently that
-this redux app can not read, so if this redux app does not work, that is the reason, just a typo in a response variable, let me know about any typos
+this app can not read, so if this redux app does not work, that is the reason, just a typo in a response variable, let me know about any typos
 in any of the server apps and I will try to fix it.
 - [Spring Boot + Hibernate](https://github.com/melardev/SBootApiEcomMVCHibernate)
 - [Spring Boot + JAX-RS Jersey + Hibernate](https://github.com/melardev/SpringBootEcommerceApiJersey)
