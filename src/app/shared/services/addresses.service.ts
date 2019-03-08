@@ -8,6 +8,7 @@ import {catchError, map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {ErrorResult} from '../dtos/local/base';
+import {buildErrorObservable} from '../utils/net.utils';
 
 @Injectable({
   providedIn: 'root'
@@ -27,9 +28,9 @@ export class AddressesService {
           if (res.success && res.addresses) {
             console.log('[+] Received ' + res.addresses.length + ' addresses');
           }
-          return res;
+          return res as AddressListResponseDto;
         }), catchError(err => {
-          return err.message;
+          return buildErrorObservable(err);
         }));
   }
 }

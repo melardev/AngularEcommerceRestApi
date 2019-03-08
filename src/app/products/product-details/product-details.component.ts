@@ -5,13 +5,11 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Product} from '../../shared/models/product';
 
 import {ProductsService} from '../../shared/services/products.service';
-import {SpinnerService} from '../../shared/services/spinner.service';
 import {ShoppingCartService} from '../../shared/services/shopping-cart.service';
 import {UsersService} from '../../shared/services/users.service';
 import {Subscription} from 'rxjs';
 import {NotificationService} from '../../shared/services/notification.service';
 import {Comment} from '../../shared/models/comment.model';
-import {AuthInfo} from '../../shared/dtos/responses/auth/auth-info.dto';
 import {CommentSubmittedResponse} from '../../shared/dtos/responses/comments/comment-submitted.response';
 import {ShoppingCart} from '../../shared/models/shopping-cart.model';
 import {User} from '../../shared/models/user';
@@ -36,7 +34,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductsService,
-    private spinnerService: SpinnerService,
     private shoppingCartService: ShoppingCartService,
     private usersService: UsersService,
     private notificationService: NotificationService,
@@ -79,7 +76,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   getProductDetail(slug: string) {
-    this.spinnerService.show();
 
     this.productService.getBySlug(slug).subscribe(res => {
       // this.spinnerService.hide();

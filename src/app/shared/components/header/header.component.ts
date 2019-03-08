@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     this.cart = this.cartService.getCart();
 
-    // this.subscriptions.push(this.jwtService.getUser().subscribe(user => {
+
     this.subscriptions.push(this.usersService.isLoggedInAsync().subscribe(isLoggedIn => {
       this.isLoggedIn = isLoggedIn;
       // this.isLoggedIn = !!(user && user.username && user.token);

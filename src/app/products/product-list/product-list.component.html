@@ -81,7 +81,7 @@
         </div>
         <!-- Pagination -->
         <div class="text-center mt-3">
-
+          <app-pagination [pageMeta]="(products|async)?.page_meta" (loadMore)="onLoadMore($event)"></app-pagination>
         </div>
       </div>
       <!--/.Card-->

@@ -16,7 +16,7 @@ export class PageMeta {
   requested_page_size: number;
   current_items_count: number;
 
-  total_pages_count: number;
+  number_of_pages: number;
   total_items_count: number;
 }
 

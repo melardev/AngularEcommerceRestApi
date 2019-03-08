@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {CarouselComponent} from './components/carousel/carousel.component';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -18,15 +19,15 @@ import {FooterComponent} from './components/footer/footer.component';
   declarations: [
     CarouselComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PaginationComponent
   ],
   exports: [
-
-    HeaderComponent,
-    FooterComponent,
     FormsModule,
     RouterModule,
-
+    HeaderComponent,
+    FooterComponent,
+    PaginationComponent,
   ],
   providers: []
 })

@@ -6,10 +6,8 @@ import {Product} from '../../shared/models/product';
 import {Category} from '../../shared/models/category.model';
 import {ProductsService} from '../../shared/services/products.service';
 import {UsersService} from '../../shared/services/users.service';
-
-import {catchError, map, tap} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
 import {ProductListResponseDto} from '../../shared/dtos/responses/products/products.dto';
+import {PaginatedRequestDto} from '../../shared/dtos/requests/base.dto';
 
 
 @Component({
@@ -72,5 +70,9 @@ export class ProductListComponent implements OnInit {
       }
       console.log('fetched ' + res.id);
     });
+  }
+
+  onLoadMore(query: PaginatedRequestDto) {
+    this.productsService.getAllProducts(query); // no need to subscribe, we render using observables so angular takes care for us
   }
 }

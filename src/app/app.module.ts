@@ -7,7 +7,6 @@ import {AboutComponent} from './components/about/about.component';
 import {SharedModule} from './shared/shared.module';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {ProductsService} from './shared/services/products.service';
-import {JwtService} from './shared/services/jwt.service';
 import {UsersService} from './shared/services/users.service';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {ShoppingCartService} from './shared/services/shopping-cart.service';
@@ -31,7 +30,6 @@ import {JwtHttpInterceptor} from './shared/interceptors/jwt-http.interceptor';
   exports: [PageNotFoundComponent],
   providers: [
     ProductsService,
-    JwtService,
     UsersService,
     LocalStorageService,
     ShoppingCartService,

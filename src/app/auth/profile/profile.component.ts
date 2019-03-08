@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {JwtService} from '../../shared/services/jwt.service';
 import {User} from '../../shared/models/user';
 import {UsersService} from '../../shared/services/users.service';
 import {Router} from '@angular/router';

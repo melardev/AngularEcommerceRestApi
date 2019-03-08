@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PagesService} from '../../shared/services/pages.service';
 import {Category} from '../../shared/models/category.model';
 import {Tag} from '../../shared/models/tag.model';
+import {HomeResponseDto} from '../../shared/dtos/responses/pages/home.dto';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +17,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pageService.fetchHome().subscribe(res =>{
-      this.tags = res.tags;
-      this.categories = res.categories;
+    this.pageService.fetchHome().subscribe(res => {
+      if (res.success) {
+        this.tags = (res as HomeResponseDto).tags;
+        this.categories = (res as HomeResponseDto).categories;
+      }
+
     });
   }
 

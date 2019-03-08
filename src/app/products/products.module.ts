@@ -5,6 +5,7 @@ import {ProductsRouter} from './products.routing';
 import {ProductDetailsComponent} from './product-details/product-details.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   declarations: [ProductListComponent, ProductDetailsComponent],
@@ -13,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     ProductsRouter
   ]
 })

@@ -13,7 +13,6 @@ import {NotificationService} from './notification.service';
 import {ProductDto, ProductListResponseDto} from '../dtos/responses/products/products.dto';
 import {BaseAppDtoResponse, ErrorAppDtoResponse} from '../dtos/responses/shared/base.dto';
 import {PaginatedRequestDto} from '../dtos/requests/base.dto';
-import {BaseService} from './base.service';
 import {ProductLocalDto} from '../dtos/local/products.dto';
 import {ErrorResult, SuccessResult} from '../dtos/local/base';
 import {buildErrorObservable} from '../utils/net.utils';
@@ -24,7 +23,7 @@ let CREATED = false;
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService extends BaseService {
+export class ProductsService {
   private productList: Product[];
   products: ProductListResponseDto;
   private readonly baseUrl: string;
@@ -35,10 +34,10 @@ export class ProductsService extends BaseService {
 
   public cartSnapshot: ShoppingCart;
   public defaultPagination: PaginatedRequestDto;
+  private lastPaginatedRequest: PaginatedRequestDto = {page: 0, pageSize: 0};
 
   public constructor(private httpClient: HttpClient, private shoppingCartService: ShoppingCartService,
                      private notificationService: NotificationService) {
-    super();
     if (CREATED) {
       alert('Two instances of the same ProductsService');
       return;
@@ -46,7 +45,7 @@ export class ProductsService extends BaseService {
     CREATED = true;
     this.defaultPagination = {
       page: 1,
-      pageSize: 5
+      pageSize: 6
     };
     this.baseUrl = environment.urls.products;
     // subscribe to shopping cart
@@ -66,15 +65,18 @@ export class ProductsService extends BaseService {
   getAllProducts(query: PaginatedRequestDto = this.defaultPagination):
     Observable<ProductListResponseDto | ErrorResult> {
     // If products-api null or length is 0 or last time fetched more than 20 seconds then
-    if (this.products == null || this.products.products.length === 0
+    if (this.products == null || this.lastPaginatedRequest.page !== query.page || this.lastPaginatedRequest.pageSize !== query.pageSize
+      || this.products.products.length === 0
       || ((new Date().getTime() - this.lastUpdatedApiResponseForAll) > 20 * 1000)) {
-      const httpObservable = this.httpClient.get<ProductListResponseDto | ErrorAppDtoResponse>(this.baseUrl).pipe(
-        retry(2),
-        tap((response: any) => {
-          console.log('canceled:false');
-          const isCanceled = false;
-        })).subscribe(
+      this.httpClient.get<ProductListResponseDto | ErrorAppDtoResponse>(`${this.baseUrl}?page=${query.page}&page_size=${query.pageSize}`)
+        .pipe(
+          retry(2),
+          tap((response: any) => {
+            console.log('canceled:false');
+            const isCanceled = false;
+          })).subscribe(
         res => {
+          this.lastPaginatedRequest = query;
           console.log('success:' + res.success);
           if (res.success && res.products) {
             this.productList = res.products;
@@ -88,6 +90,8 @@ export class ProductsService extends BaseService {
           this.notificationService.dispatchErrorMessage(err);
           return buildErrorObservable(err);
         });
+    } else {
+      console.log('[+] Products not fetched because the condition has not been met(you recently fetched the same page and pageSize)');
     }
 
     // always return the behaviourSubject, this guy will notify the observers for any update

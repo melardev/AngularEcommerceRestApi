@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AddressesService} from '../../shared/services/addresses.service';
-import {AddressDto} from '../../shared/dtos/responses/addresses/addresses.dto';
+import {AddressDto, AddressListResponseDto} from '../../shared/dtos/responses/addresses/addresses.dto';
 
 @Component({
   selector: 'app-address-list',
@@ -15,7 +15,9 @@ export class AddressListComponent implements OnInit {
 
   ngOnInit() {
     this.addressesService.fetchAll().subscribe(res => {
-      this.addresses = res.addresses;
+      if (res.success) {
+        this.addresses = (res as AddressListResponseDto).addresses;
+      }
     }, err => {
 
     });

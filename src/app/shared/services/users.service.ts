@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {JwtService} from './jwt.service';
 import {environment} from '../../../environments/environment';
 import {User} from '../models/user';
 import {catchError, map, retry} from 'rxjs/operators';
