@@ -4,8 +4,11 @@ while making this app I am using this [Spring Boot Server](https://github.com/me
 to use that as well, all the other servers worked from postman, but I don't know If they return in the response something called differently that
 this app can not read, so if this redux app does not work, that is the reason, just a typo in a response variable, let me know about any typos
 in any of the server apps and I will try to fix it.
-- [Spring Boot + Hibernate](https://github.com/melardev/SBootApiEcomMVCHibernate)
-- [Spring Boot + JAX-RS Jersey + Hibernate](https://github.com/melardev/SpringBootEcommerceApiJersey)
+# Full-stack Applications
+## E-commerce (shopping cart)
+### Server side implementations
+- [Spring Boot + Spring Data Hibernate](https://github.com/melardev/SBootApiEcomMVCHibernate)
+- [Spring Boot + JAX-RS Jersey + Spring Data Hibernate](https://github.com/melardev/SpringBootEcommerceApiJersey)
 - [Node Js + Sequelize](https://github.com/melardev/ApiEcomSequelizeExpress)
 - [Node Js + Bookshelf](https://github.com/melardev/ApiEcomBookshelfExpress)
 - [Node Js + Mongoose](https://github.com/melardev/ApiEcomMongooseExpress)
@@ -16,13 +19,101 @@ in any of the server apps and I will try to fix it.
 - [AspNet Core](https://github.com/melardev/ApiAspCoreEcommerce)
 - [Laravel](https://github.com/melardev/ApiEcommerceLaravel)
 
+The next to come are:
+- Spring Boot + Spring Data Hibernate + Kotlin
+- Spring Boot + Jax-RS Jersey + Hibernate + Kotlin
+- Spring Boot + mybatis
+- Spring Boot + mybatis + Kotlin
+- Asp.Net Web Api v2
+- Elixir
+- Golang + Beego
+- Golang + Iris
+- Golang + Echo
+- Golang + Mux
+- Golang + Revel
+- Golang + Kit
+- Flask + Flask-Restful
+- AspNetCore + NHibernate
+- AspNetCore + Dapper
 
+### Client side implementations
 This client side E-commerce application is also implemented using other client side technologies:
 - [React Redux](https://github.com/melardev/ReactReduxEcommerceRestApi)
 - [React](https://github.com/melardev/ReactEcommerceRestApi)
 - [Vue](https://github.com/melardev/VueEcommerceRestApi)
 - [Vue + Vuex](https://github.com/melardev/VueVuexEcommerceRestApi)
-- Angular this repo
+- [Angular](https://github.com/melardev/AngularEcommerceRestApi)
+
+## Blog/CMS
+### Server side implementations
+### Client side
+#### The next come are
+- Angular NgRx-Store
+- Angular + Material
+- React + Material
+- React + Redux + Material
+- Vue + Material
+- Vue + Vuex + Material
+- Ember
+
+## Simple CRUD(Create, Read, Update, Delete)
+### Server side implementations
+### Client side implementations
+#### The next come are
+- Angular NgRx-Store
+- Angular + Material
+- React + Material
+- React + Redux + Material
+- Vue + Material
+- Vue + Vuex + Material
+- Ember
+- Vanilla javascript
+
+## CRUD + Pagination
+### Server side implementations
+- [Spring Boot + Spring Data + Jersey](https://github.com/melardev/SpringBootJerseyApiPaginatedCrud)
+- [Spring Boot + Spring Data](https://github.com/melardev/SpringBootApiJpaPaginatedCrud)
+- [Spring Boot Reactive + Spring Data Reactive](https://github.com/melardev/ApiCrudReactiveMongo)
+- [Go with Gin Gonic](https://github.com/melardev/GoGinGonicApiPaginatedCrud)
+- [Laravel](https://github.com/melardev/LaravelApiPaginatedCrud)
+- [Rails + JBuilder](https://github.com/melardev/RailsJBuilderApiPaginatedCrud)
+- [Rails](https://github.com/melardev/RailsApiPaginatedCrud)
+- [NodeJs Express + Sequelize](https://github.com/melardev/ExpressSequelizeApiPaginatedCrud)
+- [NodeJs Express + Bookshelf](https://github.com/melardev/ExpressBookshelfApiPaginatedCrud)
+- [NodeJs Express + Mongoose](https://github.com/melardev/ExpressApiMongoosePaginatedCrud)
+- [Python Django](https://github.com/melardev/DjangoApiCrudPaginated)
+- [Python Django + Rest Framework](https://github.com/melardev/DjangoRestFrameworkPaginatedCrud)
+- [Python Flask](https://github.com/melardev/FlaskApiPaginatedCrud)
+- [AspNet Core](https://github.com/melardev/AspNetCoreApiPaginatedCrud)
+- [AspNet Web Api 2](https://github.com/melardev/WebApiPaginatedAsyncCrud)
+
+#### The next come are
+- NodeJs Express + Knex
+- Flask + Flask-Restful
+- Laravel + Fractal
+- Laravel + ApiResources
+- Go with Mux
+- AspNet Web Api 2
+- Jersey
+- Elixir
+
+### Client side implementations
+- [Angular](https://github.com/melardev/AngularPaginatedAsyncCrud)
+- [React-Redux](https://github.com/melardev/ReactReduxPaginatedAsyncCrud)
+- [React](https://github.com/melardev/ReactAsyncPaginatedCrud)
+- [Vue + Vuex](https://github.com/melardev/VueVuexPaginatedAsyncCrud)
+- [Vue](https://github.com/melardev/VuePaginatedAsyncCrud)
+
+
+#### The next come are
+- Angular NgRx-Store
+- Angular + Material
+- React + Material
+- React + Redux + Material
+- Vue + Material
+- Vue + Vuex + Material
+- Ember
+- Vanilla javascript
 
 # TODO
 - Filter by category and tag dropdown
