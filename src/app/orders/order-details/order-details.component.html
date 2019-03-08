@@ -1,0 +1,8 @@
+<div class="col-sm-4" *ngFor="let cartItem of order?.order_items">
+  <div class="item">
+    Name: {{cartItem.name}}
+    SubTotal:  {{cartItem.quantity}} x {{cartItem.price}} $
+    Total: {{order.total}}
+  </div>
+  <a [routerLink]="['/products', cartItem.slug]">Product</a>
+</div>

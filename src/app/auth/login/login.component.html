@@ -1,0 +1,16 @@
+<section class="container-wrapper container d-flex justify-content-center align-items-center">
+  <div class="form-wrapper text-center col-sm-4">
+    <h2 class="text-center">Login</h2>
+    <form [formGroup]="loginForm" (submit)="submit()" novalidate>
+      <div class="form-group">
+        <input type="text" class="form-control" id="email-input" placeholder="Enter Email" formControlName="username">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password-input" placeholder="Password"
+               formControlName="password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <small><a routerLink="/register">Need an Account?</a></small>
+  </div>
+</section>

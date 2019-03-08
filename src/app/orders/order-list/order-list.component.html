@@ -1,0 +1,9 @@
+<div class="col-sm-4" *ngFor="let order of orders">
+  <div class="item">
+    Status: {{order.order_status}}<br>
+    Tracking Number: {{order.tracking_number}}<br>
+    Products in this order: {{order.order_items_count}}<br>
+    Total: {{order.total_amount}} $<br>
+  </div>
+  <a [routerLink]="['/orders', order.id]">Details</a>
+</div>

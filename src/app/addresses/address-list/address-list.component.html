@@ -1,0 +1,11 @@
+<div class="col-sm-4" *ngFor="let address of addresses">
+  <div class="item">
+    First Name: {{address.first_name}}<br>
+    Last Name: {{address.last_name}}<br>
+    Street address: {{address.street_address}}<br>
+    City: {{address.city}} <br>
+    Country: {{address.city}} <br>
+    Zip Code: {{address.zip_code}}<br>
+  </div>
+  <a [routerLink]="['/addresses', address.id]">Details</a>
+</div>

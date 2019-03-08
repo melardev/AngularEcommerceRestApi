@@ -1,0 +1,81 @@
+<div class="container" *ngIf="cartItems.length > 0">
+  <div class="row">
+    <form class="container col-8" [formGroup]="myCartProductsFrom" (submit)="updateQuantities($event)">
+      <table id="cart" class="table table-hover table-condensed">
+        <thead>
+        <tr>
+          <th> Product</th>
+          <th>Price</th>
+          <th> Quantity</th>
+          <th class="text-center">Subtotal</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let cartItem of cartItems">
+          <td data-th="Product">
+            <div class="row">
+              <div class="col-sm-3 hidden-xs">
+                <img
+                  [src]="cartItem.image_urls && cartItem.image_urls.length > 0 ? cartItem.image_urls[0] : 'https://img.business.com/rc/816x500/aHR0cHM6Ly93d3cuYnVzaW5lc3NuZXdzZGFpbHkuY29tL2ltYWdlcy9pLzAwMC8wMTcvMDg0L29yaWdpbmFsL21hY2Jvb2stcHJvLTE4LnBuZw==?_ga=2.200130154.557404650.1551883694-765115885.1551883694'"
+                  [alt]="cartItem.name + ' Image'"
+                  class="responsive"/></div>
+              <div class="col-sm-9">
+                <h4>{{cartItem.name}}</h4>
+                <p>{{cartItem.description}}</p>
+              </div>
+            </div>
+          </td>
+          <td data-th="Price">${{cartItem.price}}</td>
+          <td data-th="Quantity">
+            <label>
+              <input class="form-control" type="number" [value]="cartItem.quantity" [formControlName]="cartItem.id"
+                     min="0"/>
+            </label>
+          </td>
+          <td data-th="Subtotal" class="text-center">$ {{cartItem.quantity * cartItem.price}}</td>
+          <td class="actions" data-th="">
+            <button class="remove-product" (click)="removeCartProduct(cartItem)">
+              X
+            </button>
+          </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr class="visible-xs">
+          <td class="text-center"><strong>Total {{totalAmount}}</strong></td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink="/products" class="btn btn-warning">
+              <i class="fa fa-angle-left"></i> Continue Shopping
+            </a>
+          </td>
+          <td colspan="2" class="hidden-xs"></td>
+          <td class="hidden-xs text-center"><strong>Total {{totalAmount}}</strong>
+          </td>
+          <td>
+            <a routerLink="/orders/create" class="btn btn-success btn-block">
+              Checkout
+              <i class="fa fa-angle-right"></i>
+            </a>
+            <button class="btn btn-primary btn-block">
+              Update
+            </button>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+    </form>
+    <div class="col-4">
+      <app-cart-summary [cartItems]="cartItems"></app-cart-summary>
+      <app-cart-summary-actions></app-cart-summary-actions>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="cartItems.length === 0">
+  <!--<app-no-products-found [title]="messageTitle" [content]="messageDescription"></app-no-products-found>-->
+  No products added yet ;(
+</div>
+

@@ -1,0 +1,18 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-muted">Your cart</span>
+  <span class="badge badge-primary badge-pill">{{cartItems.length}} products</span>
+</h4>
+<ul class="list-group mb-3">
+  <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let cartItem of cartItems">
+    <div>
+      <h6 class="my-0">{{cartItem.name}} x{{cartItem.quantity}} </h6>
+    </div>
+    <span class="text-muted">${{cartItem.price * cartItem.quantity}}</span>
+  </li>
+  <hr>
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Total (USD)</span>
+    <strong>${{totalValue}}</strong>
+  </li>
+
+</ul>
