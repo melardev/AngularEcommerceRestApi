@@ -19,7 +19,7 @@
                class="form-control" name="product_count" value="{{quantity || 1}}" [min]="1"/>
       </label>
 
-      <h4>Price: $<strong>{{product.price.toFixed(2)}}</strong></h4>
+      <h4>Price: $<strong>{{product.price ? product.price.toFixed(2) : 0}}</strong></h4>
 
       <button *ngIf="product.isInCart" class="btn btn-danger" (click)="addOrUpdateCart(0)">
         Remove from cart
@@ -43,7 +43,8 @@
   <div *ngFor="let comment of product?.comments">
     <b>{{comment.user?.username}}</b>
     <p>{{comment.content}}</p>
-    <i class="fa fa-trash" aria-hidden="true" *ngIf="comment.user.username === currentUser?.username" (click)="deleteComment(comment)"></i>
+    <i class="fa fa-trash" aria-hidden="true" *ngIf="comment.user.username === currentUser?.username"
+       (click)="deleteComment(comment)"></i>
   </div>
 </div>
 

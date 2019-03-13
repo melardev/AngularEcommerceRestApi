@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
           this.notificationService.dispatchSuccessMessage('register successful');
           console.log(res);
           if (res.full_messages) {
-            alert(res.full_messages[0]);
+            // alert(res.full_messages[0]);
             this.notificationService.dispatchSuccessMessage(res.full_messages[0]);
           }
           this.router.navigate(['/auth/login']);

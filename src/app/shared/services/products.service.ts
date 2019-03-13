@@ -125,8 +125,8 @@ export class ProductsService {
     );
   }
 
-  createTodo(todo: Product): Observable<ProductDto> {
-    return this.httpClient.post<ProductDto>(this.baseUrl, todo, this.httpOptions);
+  createTodo(product: Product): Observable<ProductDto> {
+    return this.httpClient.post<ProductDto>(this.baseUrl, product, this.httpOptions);
   }
 
   update(product: Product): Observable<ProductDto | any> {

@@ -1,8 +1,8 @@
 import {LoginComponent} from './login/login.component';
 import {Routes} from '@angular/router';
-import {IndexComponent} from './index.component';
 import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
+import {PageNotFoundComponent} from '../components/page-not-found/page-not-found.component';
 
 export const AuthRoutes: Routes = [
   {
@@ -16,5 +16,9 @@ export const AuthRoutes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];

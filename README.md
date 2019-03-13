@@ -1,35 +1,32 @@
-- [AngularShopApp](#angularshopapp)
+# AngularShopApp
+# Table of Contents
+- [Introduction](#introduction)
 - [Full-stack Applications](#full-stack-applications)
-  * [E-commerce (shopping cart)](#e-commerce--shopping-cart-)
+  * [E-commerce (shopping cart)](#e-commerce-shopping-cart)
     + [Server side implementations](#server-side-implementations)
     + [Client side implementations](#client-side-implementations)
-  * [Blog/CMS](#blog-cms)
+  * [Blog/CMS](#blogcms)
     + [Server side implementations](#server-side-implementations-1)
     + [Client side](#client-side)
       - [The next come are](#the-next-come-are)
-  * [Simple CRUD(Create, Read, Update, Delete)](#simple-crud-create--read--update--delete-)
+  * [Simple CRUD(Create, Read, Update, Delete)](#simple-crudcreate-read-update-delete)
     + [Server side implementations](#server-side-implementations-2)
     + [Client side implementations](#client-side-implementations-1)
       - [The next come are](#the-next-come-are-1)
-  * [CRUD + Pagination](#crud---pagination)
+  * [CRUD + Pagination](#crud--pagination)
     + [Server side implementations](#server-side-implementations-3)
       - [The next come are](#the-next-come-are-2)
     + [Client side implementations](#client-side-implementations-2)
       - [The next come are](#the-next-come-are-3)
-- [TODO](#todo)
-  * [Development server](#development-server)
-  * [Code scaffolding](#code-scaffolding)
-  * [Build](#build)
-  * [Running unit tests](#running-unit-tests)
-  * [Running end-to-end tests](#running-end-to-end-tests)
-  * [Further help](#further-help)
-  
+- [Follow me](#social-media-links)
+    
 # AngularShopApp
 This shopping cart application is built using Angular, it is supposed to work with any of these servers listed below. **Be warned** that
 while making this app I am using this [Spring Boot Server](https://github.com/melardev/SBootApiEcomMVCHibernate) so I strongly encourage you
 to use that as well, all the other servers worked from postman, but I don't know If they return in the response something called differently that
 this app can not read, so if this redux app does not work, that is the reason, just a typo in a response variable, let me know about any typos
 in any of the server apps and I will try to fix it.
+
 # Full-stack Applications
 ## E-commerce (shopping cart)
 ### Server side implementations
@@ -72,8 +69,40 @@ This client side E-commerce application is also implemented using other client s
 
 ## Blog/CMS
 ### Server side implementations
+- [Spring Boot + Spring Data Hibernate](https://github.com/melardev/SpringBootApiBlog)
+- [Go + Gin Gonic](https://github.com/melardev/GoGonicBlogApi)
+- [NodeJs + Mongoose](https://github.com/melardev/ApiBlogExpressMongoose)
+- [Laravel](https://github.com/melardev/LaravelApiBlog)
+- [Ruby on Rails + JBuilder](https://github.com/melardev/RailsApiBlog)
+- [Django + Rest-Framework](https://github.com/melardev/DjangoApiBlog)
+- [Asp.Net Core](https://github.com/melardev/AspCoreApiBlog)
+- [Flask + Flask-SQLAlchemy](https://github.com/melardev/FlaskApiBlog)
+
+The next to come are:
+- Spring Boot + Spring Data Hibernate + Kotlin
+- Spring Boot + Jax-RS Jersey + Hibernate + Kotlin
+- Spring Boot + mybatis
+- Spring Boot + mybatis + Kotlin
+- Asp.Net Web Api v2
+- Elixir
+- Golang + Beego
+- Golang + Iris
+- Golang + Echo
+- Golang + Mux
+- Golang + Revel
+- Golang + Kit
+- Flask + Flask-Restful
+- AspNetCore + NHibernate
+- AspNetCore + Dapper
+
 ### Client side
-#### The next come are
+- [Vue + Vuex](https://github.com/melardev/VueVuexBlog)
+- [Vue](https://github.com/melardev/VueBlog)
+- [React + Redux](https://github.com/melardev/ReactReduxBlog)
+- [React](https://github.com/melardev/ReactBlog)
+- [Angular](https://github.com/melardev/AngularBlog)
+
+The next come are
 - Angular NgRx-Store
 - Angular + Material
 - React + Material
@@ -84,7 +113,25 @@ This client side E-commerce application is also implemented using other client s
 
 ## Simple CRUD(Create, Read, Update, Delete)
 ### Server side implementations
+- [Spring Boot + Spring Data Hibernate](https://github.com/melardev/SpringBootApiJpaCrud)
+- [Spring boot + Spring Data Reactive Mongo](https://github.com/melardev/SpringBootApiReactiveMongoCrud)
+- [Spring Boot + Spring Data Hibernate + Jersey](https://github.com/melardev/SpringBootApiJerseySpringDataCrud)
+- [NodeJs Express + Mongoose](https://github.com/melardev/ExpressMongooseApiCrud)
+- [Nodejs Express + Bookshelf](https://github.com/melardev/ExpressBookshelfApiCrud)
+- [Nodejs Express + Sequelize](https://github.com/melardev/ExpressSequelizeApiCrud)
+- [Go + Gin-Gonic + Gorm](https://github.com/melardev/GoGinGonicApiGormCrud)
+- [Ruby On Rails](https://github.com/melardev/RailsApiCrud)
+- [Ruby On Rails + JBuilder](https://github.com/melardev/RailsApiJBuilderCrud)
+- [Laravel](https://github.com/melardev/LaravelApiCrud)
+- [AspNet Core](https://github.com/melardev/AspNetCoreApiCrud)
+- [AspNet Web Api 2](https://github.com/melardev/AspNetWebApiCrud)
+- [Python + Flask](https://github.com/melardev/FlaskApiCrud)
+- [Python + Django](https://github.com/melardev/DjanogApiCrud)
+- [Python + Django + Rest Framework](https://github.com/melardev/DjangoRestFrameworkCrud)
+
 ### Client side implementations
+- [VueJs](https://github.com/melardev/VueAsyncCrud)
+
 #### The next come are
 - Angular NgRx-Store
 - Angular + Material
@@ -141,9 +188,15 @@ This client side E-commerce application is also implemented using other client s
 - Ember
 - Vanilla javascript
 
+# Social media links
+- [Youtube Channel](https://youtube.com/melardev) I publish videos mainly on programming
+- [Blog](http://melardev.com) Sometimes I publish the source code there before Github
+- [Twitter](https://twitter.com/@melardev) I share tips on programming
+  
+
 # TODO
 - Filter by category and tag dropdown
-- Wishlist
+- Wish-list
 - Admin Feature
 - Create Product with CkEditor
 - Rating on comments
