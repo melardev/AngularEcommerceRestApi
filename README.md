@@ -198,10 +198,12 @@ The next come are
 - Filter by category and tag dropdown
 - Wish-list
 - Admin Feature
-- Create Product with CkEditor
+- Add Tags/Categories on Product Create
 - Rating on comments
 - Country flags
 - Credit card UI
+- Authorization before route 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 

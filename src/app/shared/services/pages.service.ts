@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {catchError, map} from 'rxjs/operators';
 
 import {environment} from '../../../environments/environment';
 import {buildErrorObservable} from '../utils/net.utils';
 import {ErrorResult} from '../dtos/local/base';
 import {HomeResponseDto} from '../dtos/responses/pages/home.dto';
+import {NotificationService} from './notification.service';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ import {HomeResponseDto} from '../dtos/responses/pages/home.dto';
 export class PagesService {
   private baseUrl: { about: string; home: string };
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private notificationService: NotificationService) {
     this.baseUrl = environment.urls.pages;
   }
 
@@ -27,7 +28,10 @@ export class PagesService {
         }
         return res;
       }),
-      catchError(err => buildErrorObservable(err))
+      catchError((err: HttpErrorResponse) => {
+        this.notificationService.dispatchErrorMessage(err.message);
+        return buildErrorObservable(err);
+      })
     );
   }
 

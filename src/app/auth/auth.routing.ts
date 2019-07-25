@@ -16,9 +16,5 @@ export const AuthRoutes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent
   }
 ];

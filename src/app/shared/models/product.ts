@@ -23,6 +23,7 @@ export class Product {
 //  productCategory: string;
   price: number;
   description: string;
+  stock: number;
   image_urls: string[];
   isInCart: boolean;
   quantity: number;

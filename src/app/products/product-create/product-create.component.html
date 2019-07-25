@@ -1,0 +1,47 @@
+<form class="needs-validation" [formGroup]="productForm" (submit)="submitForm()">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="name">Product name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Product Name"
+             formControlName="name">
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div [froalaEditor]="options"
+         [(froalaModel)]="editorContent"
+         (froalaModelChange)="onDataChanged($event)">
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="col-md-2 mb-3">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" placeholder="0" step="any"
+             formControlName="price">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <label for="stock">Stock</label>
+      <input type="number" class="form-control" id="stock" placeholder="1" step="1"
+             formControlName="stock"/>
+    </div>
+  </div>
+  <br/>
+  <input id="p_files" name="p_files"
+         type="file" (change)="addFiles($event)" placeholder="Product Images" multiple/>
+
+  <hr class="mb-4">
+  <button class="btn btn-primary btn-lg btn-block" type="submit">Create</button>
+</form>
+<br/>
+<button (click)=" showCode = !showCode" class="col-4 btn btn-secondary col-md-2">Show/Hide Code</button>
+<br/>
+<code *ngIf="showCode">
+  {{description}}
+</code>
+
+<br/>
+<br/>

@@ -82,7 +82,7 @@ export class UsersService {
   }
 
   isAdminSync(): boolean {
-    return false;
+    return this.user.getValue().roles.indexOf('ROLE_ADMIN') !== -1;
   }
 
 

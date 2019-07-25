@@ -54,6 +54,7 @@ export class ProductsService {
     });
   }
 
+
   private httpOptions: object = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -125,12 +126,34 @@ export class ProductsService {
     );
   }
 
-  createTodo(product: Product): Observable<ProductDto> {
-    return this.httpClient.post<ProductDto>(this.baseUrl, product, this.httpOptions);
+  createProduct(product: Product, images: FileList): Observable<ProductDto | ErrorResult> {
+    const formData = new FormData();
+
+    for (let i = 0; i < images.length; i++) {
+      formData.append('images[]', images[i], images[i]['name']);
+    }
+
+    formData.append('name', product.name);
+    formData.append('description', product.description);
+    formData.append('stock', product.stock.toString());
+    formData.append('price', product.price.toString());
+
+    return this.httpClient.post<ProductDto | ErrorResult>(this.baseUrl, formData).pipe(
+      map(res => {
+        delete res.success;
+        this.notificationService.dispatchSuccessMessage(res.full_messages.join('<br/>'));
+        delete res.full_messages;
+        return res as ProductDto;
+      }),
+      catchError(err => {
+        this.notificationService.dispatchErrorMessage(err.message);
+        return buildErrorObservable(err);
+      })
+    );
   }
 
   update(product: Product): Observable<ProductDto | any> {
-    return this.httpClient.put<ProductDto>(this.baseUrl, product, this.httpOptions)
+    return this.httpClient.put<ProductDto>(this.baseUrl, product /*, this.httpOptions */)
       .pipe(retry(5), map(res => {
         if (res.success) {
           const at = this.products.products.find(t => t.id === res.id);
@@ -155,7 +178,7 @@ export class ProductsService {
   }
 
   deleteById(id: number) {
-    return this.httpClient.delete<Product>(`${this.baseUrl}/${id}`, this.httpOptions);
+    return this.httpClient.delete<Product>(`${this.baseUrl}/${id}`, /*this.httpOptions*/);
   }
 
   private notifyDataChanged() {

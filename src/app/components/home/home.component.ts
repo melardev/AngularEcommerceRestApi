@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
         this.tags = (res as HomeResponseDto).tags;
         this.categories = (res as HomeResponseDto).categories;
       }
-
     });
   }
 

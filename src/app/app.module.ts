@@ -13,6 +13,7 @@ import {ShoppingCartService} from './shared/services/shopping-cart.service';
 import {AuthenticationGuard} from './shared/guards/authentication.guard';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {JwtHttpInterceptor} from './shared/interceptors/jwt-http.interceptor';
+import {FroalaEditorModule, FroalaViewModule} from 'angular-froala-wysiwyg';
 
 
 @NgModule({
@@ -23,7 +24,13 @@ import {JwtHttpInterceptor} from './shared/interceptors/jwt-http.interceptor';
     PageNotFoundComponent,
   ],
   imports: [
+    // Angular Modules
     BrowserModule,
+
+    // 3party
+
+
+    // My Modules
     AppRoutingModule,
     SharedModule,
   ],

@@ -3,7 +3,7 @@
     Status: {{order.order_status}}<br>
     Tracking Number: {{order.tracking_number}}<br>
     Products in this order: {{order.order_items_count}}<br>
-    Total: {{order.total_price}} $<br>
+    Total: {{order.total}} $<br>
   </div>
   <a [routerLink]="['/orders', order.id]">Details</a>
 </div>

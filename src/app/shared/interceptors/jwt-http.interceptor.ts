@@ -19,7 +19,7 @@ export class JwtHttpInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const headersConfig = {
-      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/json',
       'Accept': 'application/json'
     };
 
